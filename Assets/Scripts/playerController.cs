@@ -19,12 +19,19 @@ public class playerController : MonoBehaviour
 
     [Header("Bools")]
     bool didFlap = false;
-    bool hitTop = false;
+    bool hit = false;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             didFlap = true;
+
+        if (hit)
+        {
+            gameController.Instance.GameOver = true;
+            hit = false;
+        }
+
 
     }
     private void FixedUpdate()
@@ -49,7 +56,7 @@ public class playerController : MonoBehaviour
             );
 
         if (transform.position.y <= minPositionY || transform.position.y >= maxPositionY)
-            hitTop = true;
+            hit = true;
 
 
         transform.position += velocity * Time.deltaTime;
@@ -67,5 +74,13 @@ public class playerController : MonoBehaviour
 
 
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "klozet")
+        {
+            hit = true;
+        }
     }
 }
