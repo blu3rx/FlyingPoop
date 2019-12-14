@@ -15,11 +15,14 @@ public class playerController : MonoBehaviour
     public float minPositionY;
     public float maxPositionY;
 
-
-
     [Header("Bools")]
     bool didFlap = false;
     bool hit = false;
+
+
+    [Header("SoundSource")]
+    public AudioSource pass;
+
 
     private void Update()
     {
@@ -91,6 +94,8 @@ public class playerController : MonoBehaviour
         if (col.tag == "point")
         {
             gameController.Instance.Score++;
+            pass.Play();
+
         }
     }
 }

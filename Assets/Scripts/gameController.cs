@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour
 {
@@ -14,9 +15,15 @@ public class gameController : MonoBehaviour
     private bool _gameOver = false;
     private int _score=1;
 
+    [Header("GameObject")]
+    public GameObject restartMenuUI;
+
+
     [Header("Text")]
     public Text scoreText;
 
+    [Header("SoundSource")]
+    public AudioSource deadFart;
 
     public void Awake()
     {
@@ -30,6 +37,9 @@ public class gameController : MonoBehaviour
         if (_gameOver)
         {
             Time.timeScale = 0;
+            restartMenuUI.SetActive(true);
+            deadFart.Play();
+            _gameOver = false;
         }
 
         scoreText.text = _score.ToString();
@@ -56,6 +66,23 @@ public class gameController : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        restartMenuUI.SetActive(false);
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+    }
+    public void Pause()
+    {
+        restartMenuUI.SetActive(true);    
+        Time.timeScale = 0;
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+
 
 
     public bool GameOver
@@ -80,6 +107,8 @@ public class gameController : MonoBehaviour
             _score = value;
         }
     }
+
+
 
 
 }

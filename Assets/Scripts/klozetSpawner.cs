@@ -32,7 +32,7 @@ public class klozetSpawner : MonoBehaviour
     {
         score = gameController.Instance.Score;
         Spawner();
-        if (score % levelUp == 0 && level <= 10)
+        if (score % levelUp == 0 && level < 10)
             Level();
         //Debug.Log(score);
 
@@ -53,8 +53,8 @@ public class klozetSpawner : MonoBehaviour
 
     private void Level()
     {
-            maxTime -= 0.25f;
-            height += 0.3f;
+            maxTime -= 0.18f;
+            //height += 0.3f;
             level++;
             gameController.Instance.Score++;
             Debug.Log("Level Up! " + level);
