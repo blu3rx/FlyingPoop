@@ -486,7 +486,7 @@ MonoBehaviour:
   maxTime: 2.5
   height: 1
   level: 1
-  levelUp: 10
+  levelUp: 25
   klozet: {fileID: 9134725429975512994, guid: 5bef34d29fba4234093500211708331a, type: 3}
 --- !u!114 &813906797
 MonoBehaviour:
@@ -737,8 +737,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2837eb1f6f6f1d04ebaf587e94ad30c4, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 3a8c4c1b91e2b874590d2643fe961658, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
