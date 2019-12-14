@@ -36,8 +36,12 @@ public class playerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        Phsycis();
 
+    }
 
+    private void Phsycis () 
+    {
         velocity += gravity * Time.deltaTime;
         if (didFlap)
         {
@@ -62,17 +66,15 @@ public class playerController : MonoBehaviour
         transform.position += velocity * Time.deltaTime;
 
 
-        float angle=0;
+        float angle = 0;
         if (velocity.y < 0)
-            angle = Mathf.Lerp(0, -380, -velocity.y / (maxSpeed*3f));
-        
+            angle = Mathf.Lerp(0, -380, -velocity.y / (maxSpeed * 3f));
+
 
 
 
 
         transform.rotation = Quaternion.Euler(0, 0, angle);
-
-
 
     }
 
@@ -81,6 +83,14 @@ public class playerController : MonoBehaviour
         if (collision.collider.tag == "klozet")
         {
             hit = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "point")
+        {
+            gameController.Instance.Score++;
         }
     }
 }

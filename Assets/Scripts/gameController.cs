@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameController : MonoBehaviour
 {
@@ -11,10 +12,10 @@ public class gameController : MonoBehaviour
    
   
     private bool _gameOver = false;
+    private int _score=1;
 
-
-
-
+    [Header("Text")]
+    public Text scoreText;
 
 
     public void Awake()
@@ -22,9 +23,6 @@ public class gameController : MonoBehaviour
 
         if (instance != null)
             Destroy(gameObject);
-   
-
-
     }
 
     private void Update()
@@ -34,6 +32,7 @@ public class gameController : MonoBehaviour
             Time.timeScale = 0;
         }
 
+        scoreText.text = _score.ToString();
 
     }
 
@@ -68,6 +67,17 @@ public class gameController : MonoBehaviour
         set
         {
             _gameOver = value;
+        }
+    }
+    public int Score
+    {
+        get
+        {
+            return _score;
+        }
+        set
+        {
+            _score = value;
         }
     }
 
