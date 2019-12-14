@@ -56,7 +56,7 @@ public class klozetSpawner : MonoBehaviour
             maxTime -= 0.25f;
             height += 0.3f;
             level++;
-            gameController.Instance.Score += 5;
+            gameController.Instance.Score++;
             Debug.Log("Level Up! " + level);
        
 

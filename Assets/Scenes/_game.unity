@@ -486,7 +486,7 @@ MonoBehaviour:
   maxTime: 2.5
   height: 1
   level: 1
-  levelUp: 30
+  levelUp: 10
   klozet: {fileID: 9134725429975512994, guid: 5bef34d29fba4234093500211708331a, type: 3}
 --- !u!114 &813906797
 MonoBehaviour:
