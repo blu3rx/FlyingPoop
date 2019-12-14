@@ -17,6 +17,10 @@ public class gameController : MonoBehaviour
 
     [Header("GameObject")]
     public GameObject restartMenuUI;
+    public GameObject pauseButton;
+    public GameObject gameOverMenu;
+
+
 
 
     [Header("Text")]
@@ -37,12 +41,17 @@ public class gameController : MonoBehaviour
         if (_gameOver)
         {
             Time.timeScale = 0;
-            restartMenuUI.SetActive(true);
+            gameOverMenu.SetActive(true);
             deadFart.Play();
             _gameOver = false;
         }
 
         scoreText.text = _score.ToString();
+
+        if (Time.timeScale == 1)
+            pauseButton.SetActive(true);
+        else if(Time.timeScale==0)
+            pauseButton.SetActive(false);
 
     }
 
@@ -69,6 +78,7 @@ public class gameController : MonoBehaviour
     public void Restart()
     {
         restartMenuUI.SetActive(false);
+        gameOverMenu.SetActive(false);
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
@@ -76,11 +86,20 @@ public class gameController : MonoBehaviour
     {
         restartMenuUI.SetActive(true);    
         Time.timeScale = 0;
+       
     }
     public void Menu()
     {
         SceneManager.LoadScene(0);
 
+    }
+    public void Resume()
+    {
+        if (_gameOver == false)
+        {
+            restartMenuUI.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 
 
