@@ -8,6 +8,7 @@ public class move : MonoBehaviour
 
     private void Update()
     {
+        speed = gameController.Instance.MoveSpeed;
         transform.position += Vector3.left * speed * Time.deltaTime;
     }
 

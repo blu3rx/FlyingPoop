@@ -384,7 +384,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 50
+  far clip plane: 100
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 600, y: 800}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ad7ef13f465cd40a99bb57e98db7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 2.5
+  maxTime: 2
   height: 3
   level: 1
   levelUp: 25
@@ -657,6 +657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4fff6cab71707479468e27130d4f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  moveSpeed: 5
   restartMenuUI: {fileID: 611054945}
   pauseButton: {fileID: 1562917535}
   gameOverMenu: {fileID: 330700947}
@@ -1780,7 +1782,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2d3d44f950ed0e143a9a9a95c4e84463, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1920,7 +1922,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2837eb1f6f6f1d04ebaf587e94ad30c4, type: 3}
+    m_Font: {fileID: 12800000, guid: 3107cb2af6229b84e9622d147a974895, type: 3}
     m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0

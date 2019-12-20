@@ -11,9 +11,18 @@ public class gameController : MonoBehaviour
     private static gameController instance;
 
    
-  
+    [Header("Bool")]
     private bool _gameOver = false;
+
+    [Header("Int")]
     private int _score=1;
+    public int score;
+
+    [Header("Floats")]
+    private float _moveSpeed;
+    public float moveSpeed;
+
+
 
     [Header("GameObject")]
     public GameObject restartMenuUI;
@@ -34,6 +43,12 @@ public class gameController : MonoBehaviour
 
         if (instance != null)
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        _moveSpeed = moveSpeed;
+        _score = score;
     }
 
     private void Update()
@@ -124,6 +139,18 @@ public class gameController : MonoBehaviour
         set
         {
             _score = value;
+        }
+    }
+
+    public float MoveSpeed
+    {
+        get
+        {
+            return _moveSpeed;
+        }
+        set
+        {
+            _moveSpeed = value;
         }
     }
 

@@ -26,6 +26,7 @@ public class klozetSpawner : MonoBehaviour
         newklozet.transform.position = transform.position + new Vector3(0, Random.Range(-1, 1), 0);
         Destroy(newklozet, 15);
 
+
     }
 
     private void Update()
@@ -53,12 +54,14 @@ public class klozetSpawner : MonoBehaviour
 
     private void Level()
     {
-            maxTime -= 0.18f;
+            maxTime -= 0.1f;
             //height += 0.3f;
             level++;
             gameController.Instance.Score++;
             Debug.Log("Level Up! " + level);
-       
+
+            if(level>=5)
+                gameController.Instance.MoveSpeed -= 0.1f; 
 
     }
 
